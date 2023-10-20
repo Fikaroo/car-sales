@@ -12,7 +12,7 @@ export default function Home() {
       <Slider>
         <SliderTrigger>Open</SliderTrigger>
         <SliderContent>
-          <div>form</div>
+          <div></div>
         </SliderContent>
       </Slider>
     </main>
