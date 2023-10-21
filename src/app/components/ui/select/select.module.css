@@ -1,0 +1,18 @@
+.select {
+  display: flex;
+  height: 3rem;
+  padding: 0.25rem 1rem;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  border-radius: 0.375rem;
+  color: #141414;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("../../../assets/icons/clock.svg") no-repeat;
+  background-position: right 1rem top 50%;
+}

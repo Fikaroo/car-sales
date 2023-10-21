@@ -20,6 +20,7 @@ const SliderContext = createContext<SliderContext>({
 });
 
 const Slider = ({ children }: { children: React.ReactNode }) => {
+  // Develop mode: isOpen(true) , Prod mode: isOpen(false)
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => setIsOpen(!isOpen);
@@ -44,7 +45,11 @@ const SliderOverlay = () => {
 
 const SliderTrigger = ({ children }: { children: React.ReactNode }) => {
   const { handleOpen } = useContext(SliderContext);
-  return <button onClick={handleOpen}>{children}</button>;
+  return (
+    <button onClick={handleOpen} className={styles.slider__trigger__btn}>
+      {children}
+    </button>
+  );
 };
 
 const SliderClose = () => {
@@ -100,6 +105,7 @@ const SliderContent = ({ children }: { children: React.ReactNode }) => {
     </Fragment>
   ) : null;
 };
+
 const SliderFooter = ({ children }: { children: React.ReactNode }) => (
   <div>{children}</div>
 );

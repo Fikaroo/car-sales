@@ -18,6 +18,7 @@
 
 .slider {
   display: flex;
+  color: #141414;
 }
 
 .slider__overlay {
@@ -48,8 +49,8 @@
   bottom: 0;
   z-index: 50;
   background: #ffffff;
-  padding: 4rem;
-  width: 32rem;
+  padding: 2rem;
+  width: 36rem;
   pointer-events: auto;
   transition: all 0.5s;
 }
@@ -61,7 +62,7 @@
   pointer-events: auto;
   position: fixed;
   top: 0;
-  right: 33rem;
+  right: 37rem;
   bottom: 0;
 }
 
@@ -73,4 +74,12 @@
 .slider__content[data-state="close"],
 .slider__close[data-state="close"] {
   animation: slide-out 500ms;
+}
+
+.slider__trigger__btn {
+  width: 10rem;
+  padding: 1rem 0.5rem;
+  background: #555;
+  border-radius: 1rem;
+  color: #ffffff;
 }

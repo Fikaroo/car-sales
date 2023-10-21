@@ -1,0 +1,9 @@
+.label {
+  display: block;
+  align-self: stretch;
+  color: #141414;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem; /* 133.333% */
+  margin-bottom: 0.25rem;
+}

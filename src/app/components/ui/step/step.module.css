@@ -1,0 +1,67 @@
+.steps {
+  grid-auto-columns: 1fr;
+  display: inline-grid;
+  grid-auto-flow: column;
+  overflow: hidden;
+  overflow-x: auto;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.step {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  color: #141414;
+  width: 100%;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.step::before {
+  content: "";
+  margin-left: -100%;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  place-items: center;
+  place-self: center;
+  background: #e5e5e5;
+  width: 100%;
+  margin-top: 0.125rem;
+  height: 0.125rem;
+}
+
+.step::after {
+  background: #fff;
+  height: 1.5rem;
+  margin-top: 0.125rem;
+  z-index: 1;
+  position: relative;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  display: grid;
+  place-items: center;
+  place-self: center;
+  content: url("../../../assets/icons/next-step.svg");
+}
+
+.step:first-child::before {
+  content: none;
+}
+
+.step[data-state="back"]::after {
+  content: url("../../../assets/icons/back-step.svg");
+}
+
+.step[data-state="next"]::after {
+  content: url("../../../assets/icons/next-step.svg");
+}
+
+.step[data-state="current"]::after {
+  border-radius: 0.75rem;
+  box-shadow: 0px 0px 0px 3px #ffeca8;
+  content: url("../../../assets/icons/current-step.svg");
+}
