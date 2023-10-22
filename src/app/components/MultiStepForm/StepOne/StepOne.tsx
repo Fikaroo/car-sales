@@ -9,7 +9,7 @@ import Label from "../../ui/label/label";
 import styles from "./StepOne.module.css";
 import Select from "../../ui/select/select";
 
-const FormSchema = z.object({
+const StepOneForm = z.object({
   receipt: z.string().min(1),
   rDate: z.string().min(1),
   rTime: z.string().min(1),
@@ -18,11 +18,11 @@ const FormSchema = z.object({
   hTime: z.string().min(1),
 });
 
-type FormSchema = z.infer<typeof FormSchema>;
+export type StepOneForm = z.infer<typeof StepOneForm>;
 
 type Inputs = {
   fieldType: "input" | "select";
-  name: keyof FormSchema;
+  name: keyof StepOneForm;
   label?: string;
   placeholder?: string;
   type?: string;
@@ -79,8 +79,8 @@ const StepOne = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<FormSchema>({
-    resolver: zodResolver(FormSchema),
+  } = useForm<StepOneForm>({
+    resolver: zodResolver(StepOneForm),
     defaultValues: {
       receipt: "",
       rDate: "",
@@ -91,7 +91,7 @@ const StepOne = () => {
     },
   });
 
-  const onSubmit = (data: FormSchema) => {
+  const onSubmit = (data: StepOneForm) => {
     console.log(data);
   };
 

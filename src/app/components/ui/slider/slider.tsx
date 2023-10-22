@@ -107,7 +107,7 @@ const SliderContent = ({ children }: { children: React.ReactNode }) => {
 };
 
 const SliderFooter = ({ children }: { children: React.ReactNode }) => (
-  <div>{children}</div>
+  <div className={styles.slider__footer}>{children}</div>
 );
 
 export { Slider, SliderTrigger, SliderContent, SliderHeader, SliderFooter };

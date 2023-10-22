@@ -83,3 +83,10 @@
   border-radius: 1rem;
   color: #ffffff;
 }
+
+.slider__footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+}

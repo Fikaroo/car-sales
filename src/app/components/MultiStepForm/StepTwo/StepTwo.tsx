@@ -8,7 +8,7 @@ import Label from "../../ui/label/label";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
 
-const FormSchema = z.object({
+const StepTwoForm = z.object({
   fullName: z.string().min(1),
   phoneNumber: z.string().min(1),
   eMail: z.string().min(1).email("This is not a valid email."),
@@ -16,11 +16,11 @@ const FormSchema = z.object({
   age: z.boolean(),
 });
 
-type FormSchema = z.infer<typeof FormSchema>;
+export type StepTwoForm = z.infer<typeof StepTwoForm>;
 
 type Inputs = {
   fieldType: "input" | "select";
-  name: keyof FormSchema;
+  name: keyof StepTwoForm;
   label?: string;
   placeholder?: string;
   type?: string;
@@ -69,8 +69,8 @@ const StepTwo = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<FormSchema>({
-    resolver: zodResolver(FormSchema),
+  } = useForm<StepTwoForm>({
+    resolver: zodResolver(StepTwoForm),
     defaultValues: {
       fullName: "",
       phoneNumber: "+994 ",
@@ -80,7 +80,7 @@ const StepTwo = () => {
     },
   });
 
-  const onSubmit = (data: FormSchema) => {
+  const onSubmit = (data: StepTwoForm) => {
     console.log(data);
   };
   return (

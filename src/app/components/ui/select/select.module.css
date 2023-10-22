@@ -16,3 +16,7 @@
   background: url("../../../assets/icons/clock.svg") no-repeat;
   background-position: right 1rem top 50%;
 }
+
+.select:focus {
+  outline: 1px solid #fc0;
+}
